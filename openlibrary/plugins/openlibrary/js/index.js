@@ -146,6 +146,11 @@ jQuery(function () {
             .then((module) => module.initPatronMetadata());
     }
 
+    if (document.getElementsById('add-cover-form')) {
+        import('./add_image')
+            .then((module) => module.initAddImage($));
+    }
+
     if ($('#cboxPrevious').length) {
         $('#cboxPrevious').attr({'aria-label': 'Previous button', 'aria-hidden': 'true'});
     }
@@ -172,4 +177,6 @@ jQuery(function () {
     $('.column').disableSelection();
     $('.trash').disableSelection();
     $('#topNotice').hide();
+
+
 });
